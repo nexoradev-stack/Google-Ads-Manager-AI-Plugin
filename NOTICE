@@ -1,0 +1,12 @@
+Google Ads Manager AI Plugin
+https://github.com/nexoradev-stack/google-ads-manager-ai-plugin
+
+This product includes software derived from "google-ads-claude-plugin"
+by Neelkant Ekbote (https://github.com/eneelkant/google-ads-claude-plugin),
+licensed under the Apache License, Version 2.0.
+
+Changes made in this repository include: a preview-and-confirm safety gate on
+19 spend, launch and removal tools; server-side spend limits; bearer-token
+login, rate limiting, allowed-host checks and a /health endpoint for remote
+transports; a fix so set_campaign_status(REMOVED) can no longer skip removal
+confirmation; new tests; and rewritten documentation.

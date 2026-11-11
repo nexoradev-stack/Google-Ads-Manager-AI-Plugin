@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="780" viewBox="0 0 1280 780" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#34D399"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FBBF24"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="780" fill="#0A1712"/>
+
+  <text x="60" y="58" font-size="26" font-weight="800" fill="#FFFFFF">How a request flows</text>
+  <text x="60" y="86" font-size="15" fill="#8DB3A3">One Python server for every AI client · spend limits and a confirmation gate sit in front of the Google Ads API</text>
+
+  <g font-size="12" font-weight="700" fill="#34D399" letter-spacing="1.5">
+    <text x="60" y="132">1 · AI CLIENTS</text>
+    <text x="320" y="132">2 · TRANSPORT</text>
+    <text x="600" y="132">3 · MCP SERVER  (src/google_ads_mcp)</text>
+    <text x="1030" y="132">4 · GOOGLE</text>
+  </g>
+
+  <!-- clients -->
+  <g font-size="16" font-weight="700" fill="#FFFFFF">
+    <rect x="60" y="150" width="200" height="60" rx="12" fill="#11271E" stroke="#24563F"/>
+    <text x="80" y="177">Claude</text><text x="80" y="197" font-size="12" font-weight="400" fill="#8DB3A3">Desktop · Code · plugin</text>
+    <rect x="60" y="222" width="200" height="60" rx="12" fill="#11271E" stroke="#24563F"/>
+    <text x="80" y="249">ChatGPT</text><text x="80" y="269" font-size="12" font-weight="400" fill="#8DB3A3">remote MCP / tunnel</text>
+    <rect x="60" y="294" width="200" height="60" rx="12" fill="#11271E" stroke="#24563F"/>
+    <text x="80" y="321">Gemini CLI</text><text x="80" y="341" font-size="12" font-weight="400" fill="#8DB3A3">settings.json</text>
+    <rect x="60" y="366" width="200" height="60" rx="12" fill="#11271E" stroke="#24563F"/>
+    <text x="80" y="393">Cursor</text><text x="80" y="413" font-size="12" font-weight="400" fill="#8DB3A3">.cursor/mcp.json</text>
+  </g>
+
+  <!-- transports -->
+  <rect x="320" y="150" width="230" height="104" rx="14" fill="#0F241B" stroke="#34D399" stroke-opacity="0.55"/>
+  <text x="340" y="180" font-size="17" font-weight="800" fill="#FFFFFF">stdio (default)</text>
+  <g font-size="12.5" fill="#B5CFC3">
+    <text x="340" y="204">uv run google-ads-mcp</text>
+    <text x="340" y="224">Local child process</text>
+    <text x="340" y="244">No network port</text>
+  </g>
+
+  <rect x="320" y="270" width="230" height="196" rx="14" fill="#0F241B" stroke="#34D399" stroke-opacity="0.55"/>
+  <text x="340" y="300" font-size="17" font-weight="800" fill="#FFFFFF">Streamable HTTP / SSE</text>
+  <text x="340" y="322" font-size="12.5" fill="#B5CFC3">/mcp · /health</text>
+  <g font-size="12" fill="#C7F5E1">
+    <rect x="340" y="334" width="190" height="24" rx="6" fill="#FFFFFF" fill-opacity="0.06"/><text x="350" y="350">Bearer token (constant-time)</text>
+    <rect x="340" y="362" width="190" height="24" rx="6" fill="#FFFFFF" fill-opacity="0.06"/><text x="350" y="378">Rate limit 120 / min / IP</text>
+    <rect x="340" y="390" width="190" height="24" rx="6" fill="#FFFFFF" fill-opacity="0.06"/><text x="350" y="406">Allowed hosts</text>
+    <rect x="340" y="418" width="190" height="24" rx="6" fill="#FFFFFF" fill-opacity="0.06"/><text x="350" y="434">No token → refuses 0.0.0.0</text>
+  </g>
+
+  <!-- server -->
+  <rect x="600" y="150" width="380" height="470" rx="16" fill="#0F2A1F" stroke="#34D399"/>
+  <g font-size="12" fill="#B5CFC3">
+    <rect x="620" y="170" width="340" height="80" rx="10" fill="#143528"/>
+    <text x="636" y="196" font-size="15" font-weight="800" fill="#FFFFFF">Tool registry · 47 tools</text>
+    <text x="636" y="218">accounts · campaigns · ad groups · ads · keywords</text>
+    <text x="636" y="236">Performance Max · budgets · reporting · utilities</text>
+
+    <rect x="620" y="262" width="340" height="66" rx="10" fill="#143528" stroke="#FBBF24" stroke-opacity="0.7"/>
+    <text x="636" y="288" font-size="15" font-weight="800" fill="#FBBF24">① Spend limits</text>
+    <text x="636" y="310">max daily budget · max % increase · max CPC</text>
+
+    <rect x="620" y="340" width="340" height="104" rx="10" fill="#143528" stroke="#34D399" stroke-opacity="0.8"/>
+    <text x="636" y="366" font-size="15" font-weight="800" fill="#34D399">② Confirmation gate · 19 tools</text>
+    <text x="636" y="388">no confirm → preview: current vs new, money</text>
+    <text x="636" y="406">impact, reversible? Nothing is changed.</text>
+    <text x="636" y="428" fill="#FFFFFF" font-weight="600">confirm=true → runs · pausing never gated</text>
+
+    <rect x="620" y="456" width="340" height="66" rx="10" fill="#143528"/>
+    <text x="636" y="482" font-size="15" font-weight="800" fill="#FFFFFF">Google Ads client wrapper</text>
+    <text x="636" y="504">official google-ads library · API v23 · GAQL</text>
+
+    <rect x="620" y="534" width="340" height="66" rx="10" fill="#143528"/>
+    <text x="636" y="560" font-size="15" font-weight="800" fill="#FFFFFF">Settings</text>
+    <text x="636" y="582">env / .env · service account · values never logged</text>
+  </g>
+
+  <!-- google -->
+  <rect x="1030" y="190" width="200" height="200" rx="14" fill="#34D399" fill-opacity="0.12" stroke="#34D399"/>
+  <text x="1048" y="222" font-size="16" font-weight="800" fill="#FFFFFF">Google Ads API</text>
+  <g font-size="12.5" fill="#C7F5E1">
+    <text x="1048" y="248">Search · Display · Video</text>
+    <text x="1048" y="268">Demand Gen · PMax</text>
+    <text x="1048" y="288">Budgets · keywords</text>
+    <text x="1048" y="308">Reporting (GAQL)</text>
+  </g>
+  <rect x="1048" y="330" width="164" height="44" rx="10" fill="#0A1712"/>
+  <text x="1130" y="348" font-size="11" font-weight="700" fill="#34D399" text-anchor="middle">developer token +</text>
+  <text x="1130" y="364" font-size="11" font-weight="700" fill="#34D399" text-anchor="middle">service account / MCC</text>
+
+  <rect x="1030" y="420" width="200" height="120" rx="14" fill="#FFFFFF" fill-opacity="0.03" stroke="#5B7A6C" stroke-dasharray="6 5"/>
+  <text x="1048" y="450" font-size="14" font-weight="800" fill="#FFFFFF">Cannot change</text>
+  <g font-size="12.5" fill="#8DB3A3">
+    <text x="1048" y="474">billing</text>
+    <text x="1048" y="494">user access</text>
+    <text x="1048" y="514">account permissions</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#34D399" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M260 180 C292 180 296 196 318 200"/>
+    <path d="M260 252 C296 252 296 330 318 340"/>
+    <path d="M260 324 C290 324 296 222 318 216"/>
+    <path d="M260 396 C290 396 296 380 318 376"/>
+    <path d="M550 202 C578 202 580 210 598 210"/>
+    <path d="M550 368 C578 368 580 300 598 300"/>
+    <path d="M980 490 C1005 490 1008 300 1028 300"/>
+  </g>
+  <path d="M960 300 C990 300 990 380 962 390" stroke="#FBBF24" stroke-width="1.6" fill="none" stroke-dasharray="4 4" marker-end="url(#r)"/>
+
+  <!-- risk strip -->
+  <rect x="60" y="650" width="1170" height="96" rx="14" fill="#FFFFFF" fill-opacity="0.03" stroke="#24563F"/>
+  <text x="84" y="682" font-size="15" font-weight="800" fill="#FFFFFF">How the 47 tools are treated</text>
+  <g font-size="14">
+    <circle cx="92" cy="716" r="7" fill="#34D399"/><text x="108" y="721" fill="#C7F5E1"><tspan font-weight="800" fill="#FFFFFF">26 read</tspan> — run instantly (lists, reports, GAQL, utilities)</text>
+    <circle cx="530" cy="716" r="7" fill="#7DD3FC"/><text x="546" y="721" fill="#C7F5E1"><tspan font-weight="800" fill="#FFFFFF">2 write</tspan> — run instantly (PMax assets, signals)</text>
+    <circle cx="930" cy="716" r="7" fill="#FBBF24"/><text x="946" y="721" fill="#C7F5E1"><tspan font-weight="800" fill="#FFFFFF">19 gated</tspan> — preview, then confirm</text>
+  </g>
+</svg>

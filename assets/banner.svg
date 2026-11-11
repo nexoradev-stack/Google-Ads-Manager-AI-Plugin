@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1410"/>
+      <stop offset="0.55" stop-color="#0F2A1F"/>
+      <stop offset="1" stop-color="#114232"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#34D399" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#FFFFFF" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="420" fill="url(#bg)"/>
+  <rect width="1280" height="420" fill="url(#dots)"/>
+  <rect width="1280" height="420" fill="url(#glow)"/>
+
+  <!-- left -->
+  <rect x="72" y="70" width="290" height="32" rx="16" fill="#34D399" fill-opacity="0.14" stroke="#34D399" stroke-opacity="0.55"/>
+  <circle cx="92" cy="86" r="5" fill="#FBBF24"/>
+  <text x="106" y="91" font-size="14" font-weight="600" fill="#C7F5E1" letter-spacing="1.2">47 TOOLS · MCP SERVER</text>
+
+  <text x="72" y="168" font-size="52" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5">Google Ads Manager</text>
+  <text x="72" y="226" font-size="52" font-weight="800" fill="#34D399" letter-spacing="-1.5">that asks before it spends</text>
+
+  <text x="72" y="280" font-size="20" fill="#B5CFC3">Campaigns, ads, keywords, Performance Max and reporting</text>
+  <text x="72" y="308" font-size="20" fill="#B5CFC3">from Claude, ChatGPT, Gemini or Cursor.</text>
+
+  <g font-size="15" font-weight="600" fill="#E6FFF4">
+    <rect x="72" y="338" width="88" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <text x="116" y="360" text-anchor="middle">Claude</text>
+    <rect x="170" y="338" width="100" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <text x="220" y="360" text-anchor="middle">ChatGPT</text>
+    <rect x="280" y="338" width="92" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <text x="326" y="360" text-anchor="middle">Gemini</text>
+    <rect x="382" y="338" width="86" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.18"/>
+    <text x="425" y="360" text-anchor="middle">Cursor</text>
+  </g>
+
+  <!-- right: preview card -->
+  <g transform="translate(790 58)">
+    <rect width="420" height="304" rx="18" fill="#0F241B" stroke="#34D399" stroke-opacity="0.4"/>
+    <rect width="420" height="44" rx="18" fill="#143528"/>
+    <rect y="26" width="420" height="18" fill="#143528"/>
+    <circle cx="22" cy="22" r="5" fill="#FF6B6B"/>
+    <circle cx="40" cy="22" r="5" fill="#FBBF24"/>
+    <circle cx="58" cy="22" r="5" fill="#34D399"/>
+    <text x="84" y="27" font-size="13" font-weight="600" fill="#C7F5E1">update_budget</text>
+    <rect x="252" y="12" width="156" height="20" rx="10" fill="#FBBF24" fill-opacity="0.18"/>
+    <text x="330" y="26" font-size="10.5" font-weight="700" fill="#FBBF24" text-anchor="middle">PREVIEW · NOT APPLIED</text>
+
+    <text x="24" y="78" font-size="12" font-weight="600" fill="#8DB3A3" letter-spacing="1">DAILY BUDGET</text>
+    <text x="24" y="122" font-size="34" font-weight="800" fill="#8DB3A3">$50</text>
+    <path d="M104 110 H150" stroke="#34D399" stroke-width="3"/>
+    <path d="M144 103 L154 110 L144 117 Z" fill="#34D399"/>
+    <text x="166" y="122" font-size="34" font-weight="800" fill="#FFFFFF">$75</text>
+    <text x="252" y="104" font-size="13" font-weight="700" fill="#FBBF24">+$25 / day</text>
+    <text x="252" y="122" font-size="13" fill="#B5CFC3">≈ +$760 / month</text>
+
+    <line x1="24" y1="146" x2="396" y2="146" stroke="#FFFFFF" stroke-opacity="0.1"/>
+    <g font-size="13" fill="#B5CFC3">
+      <text x="24" y="172">Reversible</text><text x="396" y="172" text-anchor="end" fill="#34D399" font-weight="700">Yes</text>
+      <text x="24" y="198">Spend limit (max +50%)</text><text x="396" y="198" text-anchor="end" fill="#34D399" font-weight="700">Within limit</text>
+      <text x="24" y="224">Changes made so far</text><text x="396" y="224" text-anchor="end" fill="#FFFFFF" font-weight="700">None</text>
+    </g>
+
+    <rect x="24" y="246" width="372" height="40" rx="10" fill="#34D399"/>
+    <text x="210" y="271" font-size="14" font-weight="800" fill="#0B1410" text-anchor="middle">Approve → call again with confirm=true</text>
+  </g>
+</svg>

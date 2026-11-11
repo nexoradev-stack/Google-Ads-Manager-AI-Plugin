@@ -1,0 +1,8 @@
+{
+  "name": "google-ads-manager",
+  "version": "1.0.0",
+  "description": "Manage Google Ads from Claude (and Cursor, Gemini, ChatGPT) with a preview-and-confirm safety gate and optional spend limits.",
+  "author": {
+    "name": "Claude (Anthropic) and Cursor"
+  }
+}

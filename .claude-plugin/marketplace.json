@@ -1,0 +1,13 @@
+{
+  "name": "google-ads-manager-ai-plugin",
+  "owner": {
+    "name": "nexoradev-stack"
+  },
+  "plugins": [
+    {
+      "name": "google-ads-manager",
+      "source": "./google-ads-manager",
+      "description": "Google Ads for Claude through MCP: campaigns, ads, keywords, Performance Max and reporting, with a preview-and-confirm safety gate before anything spends money."
+    }
+  ]
+}
