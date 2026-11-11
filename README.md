@@ -48,9 +48,10 @@
 13. [Project structure](#-project-structure)
 14. [Development](#-development)
 15. [Troubleshooting](#-troubleshooting)
-16. [Contributing](#-contributing)
-17. [Contributors](#-contributors)
-18. [License and attribution](#-license-and-attribution)
+16. [Roadmap](#%EF%B8%8F-roadmap)
+17. [Contributing](#-contributing)
+18. [Contributors](#-contributors)
+19. [License and attribution](#-license-and-attribution)
 
 ---
 
@@ -403,6 +404,21 @@ CI runs the tests on Python 3.12 and 3.13 and builds the Docker image on every p
 | `429 Rate limit exceeded` | Wait `Retry-After` seconds or raise `MCP_RATE_LIMIT_MAX` |
 | ChatGPT can't use stdio | Deploy streamable-http or use a Secure MCP Tunnel |
 | Client can't start the server | Use absolute paths and make sure `uv` is on `PATH` |
+
+---
+
+## 🗺️ Roadmap
+
+Planned work is tracked as [GitHub issues](https://github.com/nexoradev-stack/google-ads-manager-ai-plugin/issues) in four milestones:
+
+| Milestone | Focus | Highlights |
+|---|---|---|
+| [**v1.1 — Hardening**](https://github.com/nexoradev-stack/google-ads-manager-ai-plugin/milestone/1) | Security and reliability | Validated GAQL inputs, `validate_only` dry-runs in previews, confirmation bound to the previewed request, linting, coverage, releases |
+| [**v1.2 — Reporting+**](https://github.com/nexoradev-stack/google-ads-manager-ai-plugin/milestone/2) | Better answers | Period comparisons, budget pacing, wasted-spend finder, Quality Score, change history, account health |
+| [**v1.3 — Campaign ops**](https://github.com/nexoradev-stack/google-ads-manager-ai-plugin/milestone/3) | More actions | Negative keywords, sitelinks and callouts, location targeting, bulk pause, conversions, image uploads, experiments |
+| [**v2.0 — Team scale**](https://github.com/nexoradev-stack/google-ads-manager-ai-plugin/milestone/4) | Running for a team | OAuth login, per-user access, audit log, account allow-list, read-only mode, account-wide spend cap |
+
+Good first contributions carry the [`good first issue`](https://github.com/nexoradev-stack/google-ads-manager-ai-plugin/labels/good%20first%20issue) label.
 
 ---
 
